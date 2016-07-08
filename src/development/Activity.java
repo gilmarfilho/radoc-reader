@@ -50,10 +50,10 @@ public class Activity {
      * @return A quantidade de horas que a atividade vale
      */
     private float calcActivityHours(Date startDate, Date endDate){
-        long diferenca;
+        long difference;
         int miliSecDay = 1000 * 60 * 60 * 24; //Quantidade de milisegundos em um dia
         float hoursSpent;
-        int maxDayWork = 8;
+        int maxDayWork = 8;// Numero maxido de horas permitidas
         Calendar initDate = Calendar.getInstance();
                 
         Calendar finalDate = Calendar.getInstance();
@@ -68,9 +68,10 @@ public class Activity {
         
         //Calcula a quandidade de milisegundos entre as duas datas e divide pela quantidade de milisegundos contidos em um dia, 
         //para descobrir quantos dias se passaram
-        diferenca = (finalDate.getTimeInMillis() - initDate.getTimeInMillis()) / miliSecDay;
+        difference = (finalDate.getTimeInMillis() - initDate.getTimeInMillis()) / miliSecDay;
         
-        hoursSpent = diferenca * maxDayWork;
+        //Calculo para descobrir o numero de horas trabalhadas
+        hoursSpent = difference * maxDayWork;
         
         
         return hoursSpent;
