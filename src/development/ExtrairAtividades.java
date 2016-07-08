@@ -6,6 +6,7 @@
 package development;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 
 /**
  *
@@ -15,6 +16,8 @@ public class ExtrairAtividades {
     public static void main(String[] args) throws IOException {
         PDFManager pdfManager = new PDFManager();
         pdfManager.setFilePath("Radoc-2011-Final.pdf");
-        System.out.println(pdfManager.ToText());       
+        PrintWriter out = new PrintWriter("filename.txt");
+        out.println(pdfManager.ToText());
+        //System.out.println(pdfManager.ToText());       
     }  
 }
