@@ -14,7 +14,7 @@ import java.io.IOException;
 public class ExtrairAtividades {
     public static void main(String[] args) throws IOException {
         PDFManager pdfManager = new PDFManager();
-        pdfManager.setFilePath("C:\\Users\\Gilmar\\Documents\\radoc-reader\\Trabalho-3-Exemplos-Radoc\\Radoc-2011-Final.pdf");
+        pdfManager.setFilePath("Radoc-2011-Final.pdf");
         System.out.println(pdfManager.ToText());       
     }  
 }

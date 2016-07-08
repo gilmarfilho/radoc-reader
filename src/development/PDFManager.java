@@ -40,7 +40,7 @@ public class PDFManager {
         pdDoc = new PDDocument(cosDoc);
         pdDoc.getNumberOfPages();
         pdfStripper.setStartPage(1);
-        pdfStripper.setEndPage(10);
+        pdfStripper.setEndPage(pdDoc.getNumberOfPages());
 
         Text = pdfStripper.getText(pdDoc);
         return Text;
