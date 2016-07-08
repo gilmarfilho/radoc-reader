@@ -13,7 +13,7 @@ import java.io.IOException;
  */
 public class Reader {
     public static void main(String[] args) throws IOException {
-        PDFManager pdfManager = new PDFManager();
+        ExtrairAtividades pdfManager = new ExtrairAtividades();
         pdfManager.setFilePath("C:\\Users\\Gilmar\\Documents\\radoc-reader\\Trabalho-3-Exemplos-Radoc\\Radoc-2011-Final.pdf");
         System.out.println(pdfManager.ToText());       
     }  

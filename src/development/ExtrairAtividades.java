@@ -16,7 +16,7 @@ import org.apache.pdfbox.text.PDFTextStripper;
  *
  * @author Gilmar
  */
-public class PDFManager {
+public class ExtrairAtividades {
     private PDFParser parser;
     private PDFTextStripper pdfStripper;
     private PDDocument pdDoc ;
