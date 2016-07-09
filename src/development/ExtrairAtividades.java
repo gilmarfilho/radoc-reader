@@ -32,6 +32,7 @@ public class ExtrairAtividades {
         
         activities.addAll(activitiesReader.extractActivity(atividadesOrientacao));
         activities.addAll(activitiesReader.extensãoActivities(atividadesExtensao));
+        activities.addAll(activitiesReader.qualificacaoActivities(atividadesQualificacao));
         
         for (Activity activity :activities) {
             System.out.println(activity.toString());;
