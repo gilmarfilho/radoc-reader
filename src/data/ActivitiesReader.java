@@ -29,6 +29,14 @@ public class ActivitiesReader {
         return data;
     }
     
+    public String extractDateField(String activities, String tag){
+        int initialPos = activities.indexOf(tag) + tag.length();
+        int endPos = initialPos + 13;
+
+        String date = activities.substring(initialPos , endPos);
+        return date;
+    }
+    
     public String deleteData(String activities, String tag){{
         activities = activities.replaceFirst(tag, "extraido");
         return activities;
