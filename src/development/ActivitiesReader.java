@@ -32,27 +32,27 @@ public class ActivitiesReader {
             endPos = sessionActivities.indexOf("Tabela:");
 
             String description = sessionActivities.substring(initialPos + 20, endPos -1);
-            sessionActivities.replace("Título do trabalho:", "");
-            sessionActivities.replaceFirst("Tabela:", "");
+            sessionActivities = sessionActivities.replaceFirst("Título do trabalho", "extraido");
+            sessionActivities = sessionActivities.replaceFirst("Tabela:", "extraido");
             //CHA
             initialPos = sessionActivities.indexOf("CHA:");
             endPos = sessionActivities.indexOf("Data início:");
             String cha = sessionActivities.substring(initialPos + 4, endPos -1);
-            sessionActivities.replaceFirst("CHA:", "");
+            sessionActivities = sessionActivities.replaceFirst("CHA:", "extraido");
             //Data de início
             initialPos = sessionActivities.indexOf("Data início:");
             endPos = sessionActivities.indexOf("Data término:");
                
             String startDate = sessionActivities.substring(initialPos + 12, endPos -1);
-            sessionActivities.replaceFirst("Data início:", "");
+            sessionActivities = sessionActivities.replaceFirst("Data início:", "extraido");
             
             //Data de término
             initialPos = sessionActivities.indexOf("Data término:");
             endPos = sessionActivities.indexOf("Tipo Orientação:");
 
             String endDate = sessionActivities.substring(initialPos + 13, endPos - 1);
-            sessionActivities.replaceFirst("Data término:", "");
-            sessionActivities.replaceFirst("Tipo Orientação:", "");
+            sessionActivities = sessionActivities.replaceFirst("Data término:", "extraido");
+            sessionActivities = sessionActivities.replaceFirst("Tipo Orientação:", "extraido");
             
             activity.setDescription(description);
             activity.setActivityHours(cha);
