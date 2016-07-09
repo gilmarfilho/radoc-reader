@@ -36,8 +36,8 @@ public class ActivitiesReader {
     }
 
     private String removeFooterHeader(String sessionActivities){
-        while(sessionActivities.indexOf("Data: ") != -1){
-            sessionActivities = sessionActivities.replaceFirst("Data: (.*)\n", "");
+        while(sessionActivities.indexOf("Data:") != -1){
+            sessionActivities = sessionActivities.replaceFirst("Data:(.*)", "");
         }
         while(sessionActivities.indexOf("UNIVERSIDADE FEDERAL DE GOIÁS\n" +
 "SISTEMA DE CADASTRO DE ATIVIDADES DOCENTES\n" +

@@ -6,8 +6,6 @@
 package activities;
 
 import data.ActivitiesReader;
-import development.*;
-import java.util.ArrayList;
 
 /**
  *
@@ -20,5 +18,6 @@ public class Administrativas {
     public Administrativas(String radoc){
         this.activities = activitiesReader.extractActivities(radoc, "Atividades administrativas", "Produtos");
     }
+
 
 }

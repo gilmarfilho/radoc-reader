@@ -18,6 +18,7 @@ import java.util.ArrayList;
  */
 public class ExtrairAtividades {
     public static void main(String[] args) throws IOException, ParseException {
+
         PDFManager pdfManager = new PDFManager();
         pdfManager.setFilePath("Radoc-2011-Final.pdf");
         String radoc = pdfManager.ToText();
