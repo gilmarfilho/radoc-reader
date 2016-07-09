@@ -14,24 +14,28 @@ import java.util.Date;
  */
 public class Activity {
     private String description;
-    private float activityHours;
-    private Date startDate;
-    private Date endDate;
+    private String activityHours;
+    private String startDate;
+    private String endDate;
     
    
-    public Activity(String description, Date startDate, Date endDate){
+    /*public Activity(String description, Date startDate, Date endDate){
         this.description = description;
         this.startDate = startDate;
         this.endDate = endDate;
         
         //Calcula e atribui o numero de horas da atividade
-        this.activityHours = calcActivityHours(startDate,endDate);
+        this.activityHours = "" + calcActivityHours(startDate,endDate);
     }
     public Activity(String description, Date startDate, Date endDate,float activityHours){
         this.description = description;
         this.startDate = startDate;
         this.endDate = endDate;
-        this.activityHours = activityHours;
+        this.activityHours = "" + activityHours;
+    }*/
+
+    public Activity() {
+        
     }
      
     /**
@@ -76,5 +80,39 @@ public class Activity {
         
         return hoursSpent;
     }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public String getActivityHours() {
+        return activityHours;
+    }
+
+    public void setActivityHours(String activityHours) {
+        this.activityHours = activityHours;
+    }
+
+    public String getStartDate() {
+        return startDate;
+    }
+
+    public void setStartDate(String startDate) {
+        this.startDate = startDate;
+    }
+
+    public String getEndDate() {
+        return endDate;
+    }
+
+    public void setEndDate(String endDate) {
+        this.endDate = endDate;
+    }
+    
+    
     
 }
