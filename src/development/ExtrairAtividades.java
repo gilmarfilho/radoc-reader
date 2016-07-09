@@ -32,9 +32,9 @@ public class ExtrairAtividades {
         Projeto projeto = new Projeto(radoc);
         Qualificacao qualificacao = new Qualificacao(radoc);
         
-        //activities.addAll(administrativas.extractActivities());
+        activities.addAll(administrativas.extractActivities());
         //activities.addAll(ensino.extractActivities());
-        //activities.addAll(especiais.extractActivities());
+        activities.addAll(especiais.extractActivities());
         //activities.addAll(extensao.extractActivities());
         activities.addAll(orientacao.extractActivities());
         //activities.addAll(projeto.extractActivities());

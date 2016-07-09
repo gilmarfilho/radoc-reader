@@ -41,9 +41,7 @@ public class Activity {
         }else{
                 
         this.activityHours = horasAtividades;
-        }
-        
-        
+        }  
     }
 
     /**
@@ -52,7 +50,7 @@ public class Activity {
      */
     public String toString() {  
 	return "Descricao da Atividade:\t" + description + "\tCHA:\t" + activityHours.toString() + "\tData de Início:\t" + startDate + "\tData de Término:" + endDate; 
-} 
+    } 
     
     /**
      * Dado duas datas, calcula a quantidade de dias passado entre as duas

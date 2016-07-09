@@ -37,19 +37,15 @@ public class ActivitiesReader {
         return date;
     }
     
-    public String deleteData(String activities, String tag){{
+    public String deleteData(String activities, String tag){
         activities = activities.replaceFirst(tag, "extraido");
         return activities;
-    }
     }
 
     private String removeFooterHeader(String sessionActivities){
         while(sessionActivities.indexOf("Data:") != -1){
             sessionActivities = sessionActivities.replaceFirst("Data:(.*)", "");
         }
-        System.out.println(sessionActivities.indexOf("UNIVERSIDADE FEDERAL DE GOIÁS\r\n" +
-"SISTEMA DE CADASTRO DE ATIVIDADES DOCENTES\r\n" +
-"EXTRATO DAS ATIVIDADES"));
         while(sessionActivities.indexOf("UNIVERSIDADE FEDERAL DE GOIÁS\r\n" +
 "SISTEMA DE CADASTRO DE ATIVIDADES DOCENTES\r\n" +
 "EXTRATO DAS ATIVIDADES") != -1){
