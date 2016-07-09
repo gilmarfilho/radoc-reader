@@ -31,6 +31,7 @@ public class ExtrairAtividades {
         String atividadesAdministrativas = activitiesReader.extractActivities(radoc, "Atividades administrativas", "Produtos");
         
         activities.addAll(activitiesReader.extractActivity(atividadesOrientacao));
+        activities.addAll(activitiesReader.extensãoActivities(atividadesExtensao));
         
         for (Activity activity :activities) {
             System.out.println(activity.toString());;
