@@ -47,12 +47,15 @@ public class ActivitiesReader {
         while(sessionActivities.indexOf("Data:") != -1){
             sessionActivities = sessionActivities.replaceFirst("Data:(.*)", "");
         }
-        while(sessionActivities.indexOf("UNIVERSIDADE FEDERAL DE GOIÁS\n" +
-"SISTEMA DE CADASTRO DE ATIVIDADES DOCENTES\n" +
+        System.out.println(sessionActivities.indexOf("UNIVERSIDADE FEDERAL DE GOIÁS\r\n" +
+"SISTEMA DE CADASTRO DE ATIVIDADES DOCENTES\r\n" +
+"EXTRATO DAS ATIVIDADES"));
+        while(sessionActivities.indexOf("UNIVERSIDADE FEDERAL DE GOIÁS\r\n" +
+"SISTEMA DE CADASTRO DE ATIVIDADES DOCENTES\r\n" +
 "EXTRATO DAS ATIVIDADES") != -1){
-            sessionActivities = sessionActivities.replaceFirst("UNIVERSIDADE FEDERAL DE GOIÁS\n" +
-"SISTEMA DE CADASTRO DE ATIVIDADES DOCENTES\n" +
-"EXTRATO DAS ATIVIDADES(.*)\n", "");
+            sessionActivities = sessionActivities.replaceFirst("UNIVERSIDADE FEDERAL DE GOIÁS\r\n" +
+"SISTEMA DE CADASTRO DE ATIVIDADES DOCENTES\r\n" +
+"EXTRATO DAS ATIVIDADES(.*)\r\n", "");
         }
         
         return sessionActivities;
