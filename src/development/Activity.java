@@ -5,6 +5,8 @@
  */
 package development;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 
@@ -14,25 +16,45 @@ import java.util.Date;
  */
 public class Activity {
     private String description;
-    private String activityHours;
-    private String startDate;
-    private String endDate;
+    private Date dataStart; 
+    private Date dataEnd;
+    private Float activityHours;
     
-   
-    /*public Activity(String description, Date startDate, Date endDate){
+   /*
+    public Activity(String description, String startDate, String endDate){
         this.description = description;
         this.startDate = startDate;
         this.endDate = endDate;
         
-        //Calcula e atribui o numero de horas da atividade
-        this.activityHours = "" + calcActivityHours(startDate,endDate);
+        
     }
-    public Activity(String description, Date startDate, Date endDate,float activityHours){
+    */
+    
+    public Activity(String description, String startDate, String endDate,String activityHours) throws ParseException{
         this.description = description;
-        this.startDate = startDate;
-        this.endDate = endDate;
-        this.activityHours = "" + activityHours;
-    }*/
+        
+        //conversão da string startDate para o tipo date
+        SimpleDateFormat formatoS = new SimpleDateFormat("dd/MM/yyyy");
+        dataStart = formatoS.parse(startDate);
+        
+        //conversão da String endDate para o tipo date
+        SimpleDateFormat formatoEnd = new SimpleDateFormat("dd/MM/yyyy");
+        dataEnd = formatoEnd.parse(endDate);
+        
+        //conversão da String activityHours para Float
+        Float horasAtividades = Float.valueOf(activityHours);
+        
+        if(horasAtividades == 1){
+        //Calcula e atribui o numero de horas da atividade
+        this.activityHours = calcActivityHours(dataStart,dataEnd);
+        
+        }else{
+                
+        this.activityHours = horasAtividades;
+        }
+        
+        
+    }
 
     public Activity() {
         
@@ -43,8 +65,8 @@ public class Activity {
      * @return Retorna uma string contendo os atributos de uma atividade
      */
     public String toString() {  
-	return "descricao atividade: " + description + " CHA: " + activityHours + " data de inicio: " + startDate.toString() + "data de termino: " + endDate;  
-}
+	return "descricao atividade: " + description + " CHA: " + activityHours.toString() + " data de inicio: " + dataStart + " data de termino: " + dataEnd;  
+} 
     
     /**
      * Dado duas datas, calcula a quantidade de dias passado entre as duas
@@ -85,34 +107,18 @@ public class Activity {
         return description;
     }
 
-    public void setDescription(String description) {
-        this.description = description;
-    }
 
-    public String getActivityHours() {
+    public Float getActivityHours() {
         return activityHours;
     }
 
-    public void setActivityHours(String activityHours) {
-        this.activityHours = activityHours;
+
+    public Date getStartDate() {
+        return dataStart;
     }
 
-    public String getStartDate() {
-        return startDate;
-    }
 
-    public void setStartDate(String startDate) {
-        this.startDate = startDate;
+    public Date getEndDate() {
+        return dataEnd;
     }
-
-    public String getEndDate() {
-        return endDate;
-    }
-
-    public void setEndDate(String endDate) {
-        this.endDate = endDate;
-    }
-    
-    
-    
 }
