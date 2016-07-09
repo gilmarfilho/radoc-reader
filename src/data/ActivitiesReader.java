@@ -16,7 +16,7 @@ public class ActivitiesReader {
         int initalPos = radoc.indexOf(firstActivity);
         int endPos = radoc.indexOf(secondActivity);
         String activities = radoc.substring(initalPos, endPos);
-        activities = this.removeFooterHeader(activities);
+        activities = this.removeFooterHeaderReturn(activities);
         
         return activities;
     }
@@ -31,7 +31,7 @@ public class ActivitiesReader {
     
     public String extractDateField(String activities, String tag){
         int initialPos = activities.indexOf(tag) + tag.length();
-        int endPos = initialPos + 13;
+        int endPos = initialPos + 11;
 
         String date = activities.substring(initialPos , endPos);
         return date;
@@ -42,16 +42,24 @@ public class ActivitiesReader {
         return activities;
     }
 
-    private String removeFooterHeader(String sessionActivities){
-        while(sessionActivities.indexOf("Data:") != -1){
-            sessionActivities = sessionActivities.replaceFirst("Data:(.*)", "");
+    private String removeFooterHeaderReturn(String sessionActivities){
+        
+        while(sessionActivities.contains("\r\n")){
+            sessionActivities = sessionActivities.replaceFirst("\r\n", " ");
         }
-        while(sessionActivities.indexOf("UNIVERSIDADE FEDERAL DE GOIÁS\r\n" +
-"SISTEMA DE CADASTRO DE ATIVIDADES DOCENTES\r\n" +
-"EXTRATO DAS ATIVIDADES") != -1){
-            sessionActivities = sessionActivities.replaceFirst("UNIVERSIDADE FEDERAL DE GOIÁS\r\n" +
-"SISTEMA DE CADASTRO DE ATIVIDADES DOCENTES\r\n" +
-"EXTRATO DAS ATIVIDADES(.*)\r\n", "");
+        while(sessionActivities.contains("\n")){
+            sessionActivities = sessionActivities.replaceFirst("\n", " ");
+        }
+        
+        while(sessionActivities.contains("Data:")){
+            sessionActivities = sessionActivities.replaceFirst("Data: [0-9]+/[0-9]+/[0-9]+ [0-9]+:[0-9]+:[0-9]+                                                  JULIANO LOPES DE OLIVEIRA Página  [0-9]+ / [0-9]+", " ");
+        }
+        while(sessionActivities.contains("UNIVERSIDADE FEDERAL DE GOIÁS " +
+                "SISTEMA DE CADASTRO DE ATIVIDADES DOCENTES " +
+                "EXTRATO DAS ATIVIDADES")){
+            sessionActivities = sessionActivities.replaceFirst("UNIVERSIDADE FEDERAL DE GOIÁS " +
+"SISTEMA DE CADASTRO DE ATIVIDADES DOCENTES " +
+"EXTRATO DAS ATIVIDADES - ANO BASE: 201[0-9]+", " ");
         }
         
         return sessionActivities;
