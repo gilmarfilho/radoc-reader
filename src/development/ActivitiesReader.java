@@ -64,4 +64,68 @@ public class ActivitiesReader {
         
         return activities;
     }
+    
+    public ArrayList<Activity> qualificacaoActivities(String sessionActivities){
+        ArrayList<Activity> activities = new ArrayList<>();
+        
+        while(sessionActivities.indexOf("Tabela:") != -1){
+            Activity activity = new Activity();
+            int initialPos;
+            int endPos;
+            
+            //Remove Footer
+            sessionActivities = removeFooterHeader(sessionActivities);
+            
+            
+            //Descrição
+            initialPos = sessionActivities.indexOf("Tabela:");
+            endPos = sessionActivities.indexOf("Descrição:");
+
+            String description = sessionActivities.substring(initialPos + 7, endPos -1);
+            sessionActivities = sessionActivities.replaceFirst("Tabela:", "extraido");
+            sessionActivities = sessionActivities.replaceFirst("Descrição:", "extraido");
+            //CHA
+            initialPos = sessionActivities.indexOf("CHA:");
+            endPos = sessionActivities.indexOf("Data de início:");
+            String cha = sessionActivities.substring(initialPos + 4, endPos -1);
+            sessionActivities = sessionActivities.replaceFirst("CHA:", "extraido");
+            //Data de início
+            initialPos = sessionActivities.indexOf("Data de início:");
+            endPos = sessionActivities.indexOf("Data de término:");
+               
+            String startDate = sessionActivities.substring(initialPos + 16, endPos -1);
+            sessionActivities = sessionActivities.replaceFirst("Data de início:", "extraido");
+            
+            //Data de término
+            initialPos = sessionActivities.indexOf("Data de término:");
+            endPos = sessionActivities.indexOf("Data de término:") + 28;
+
+            String endDate = sessionActivities.substring(initialPos + 17, endPos - 1);
+            sessionActivities = sessionActivities.replaceFirst("Data de término:", "extraido");
+            
+            activity.setDescription(description);
+            activity.setActivityHours(cha);
+            activity.setStartDate(startDate);
+            activity.setEndDate(endDate);
+            
+            activities.add(activity);
+        }
+        
+        return activities;
+    }
+    
+    private String removeFooterHeader(String sessionActivities){
+        while(sessionActivities.indexOf("Data: ") != -1){
+            sessionActivities = sessionActivities.replaceFirst("Data: (.*)\n", "");
+        }
+        while(sessionActivities.indexOf("UNIVERSIDADE FEDERAL DE GOIÁS\n" +
+"SISTEMA DE CADASTRO DE ATIVIDADES DOCENTES\n" +
+"EXTRATO DAS ATIVIDADES") != -1){
+            sessionActivities = sessionActivities.replaceFirst("UNIVERSIDADE FEDERAL DE GOIÁS\n" +
+"SISTEMA DE CADASTRO DE ATIVIDADES DOCENTES\n" +
+"EXTRATO DAS ATIVIDADES(.*)\n", "");
+        }
+        
+        return sessionActivities;
+    }
 }
