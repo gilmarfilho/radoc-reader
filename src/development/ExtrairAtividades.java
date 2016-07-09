@@ -30,7 +30,7 @@ public class ExtrairAtividades {
         String atividadesEspeciais = activitiesReader.extractActivities(radoc, "Atividades acadêmicas especiais", "Atividades administrativas");
         String atividadesAdministrativas = activitiesReader.extractActivities(radoc, "Atividades administrativas", "Produtos");
         
-        activities.addAll(activitiesReader.extractActivity(atividadesOrientacao));
+        activities.addAll(activitiesReader.qualificacaoActivities(atividadesQualificacao));
         
         for (Activity activity :activities) {
             System.out.println(activity.toString());;
