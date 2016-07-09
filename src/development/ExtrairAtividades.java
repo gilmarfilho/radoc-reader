@@ -7,9 +7,9 @@ package development;
 
 import activities.Activity;
 import activities.*;
-import data.ActivitiesReader;
 import data.PDFManager;
 import java.io.IOException;
+import java.text.ParseException;
 import java.util.ArrayList;
 
 /**
@@ -17,7 +17,7 @@ import java.util.ArrayList;
  * @author Gilmar
  */
 public class ExtrairAtividades {
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) throws IOException, ParseException {
         PDFManager pdfManager = new PDFManager();
         pdfManager.setFilePath("Radoc-2011-Final.pdf");
         String radoc = pdfManager.ToText();
@@ -35,7 +35,7 @@ public class ExtrairAtividades {
         //activities.addAll(ensino.extractActivities());
         //activities.addAll(especiais.extractActivities());
         //activities.addAll(extensao.extractActivities());
-        //activities.addAll(orientacao.extractActivities());
+        activities.addAll(orientacao.extractActivities());
         //activities.addAll(projeto.extractActivities());
         //activities.addAll(qualificacao.extractActivities());
         

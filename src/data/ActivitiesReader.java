@@ -20,6 +20,20 @@ public class ActivitiesReader {
         
         return activities;
     }
+    
+    public String extractData(String activities, String tag1, String tag2){
+        int initialPos = activities.indexOf(tag1);
+        int endPos = activities.indexOf(tag2);
+
+        String data = activities.substring(initialPos + tag1.length(), endPos -1);
+        return data;
+    }
+    
+    public String deleteData(String activities, String tag){{
+        activities = activities.replaceFirst(tag, "extraido");
+        return activities;
+    }
+    }
 
     private String removeFooterHeader(String sessionActivities){
         while(sessionActivities.indexOf("Data: ") != -1){

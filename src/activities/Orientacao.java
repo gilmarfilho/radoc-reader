@@ -22,41 +22,27 @@ public class Orientacao {
         this.activities = activitiesReader.extractActivities(radoc, "Atividades de orientação", "Atividades em projetos");
     }
     
-    public ArrayList<Activity> extractActivities(String sessionActivities) throws ParseException{
+    public ArrayList<Activity> extractActivities() throws ParseException{
         ArrayList<Activity> activities = new ArrayList<>();
         
-        while(sessionActivities.indexOf("Título do trabalho:") != -1){
-            int initialPos;
-            int endPos;
+        while(this.activities.indexOf("Título do trabalho:") != -1){
             //Descrição
-            initialPos = sessionActivities.indexOf("Título do trabalho:");
-            endPos = sessionActivities.indexOf("Tabela:");
-
-            String description = sessionActivities.substring(initialPos + 20, endPos -1);
-            sessionActivities = sessionActivities.replaceFirst("Título do trabalho", "extraido");
-            sessionActivities = sessionActivities.replaceFirst("Tabela:", "extraido");
+            String description = this.activitiesReader.extractData(this.activities, "Título do trabalho:", "Tabela:");
             //CHA
-            initialPos = sessionActivities.indexOf("CHA:");
-            endPos = sessionActivities.indexOf("Data início:");
-            String cha = sessionActivities.substring(initialPos + 4, endPos -1);
-            sessionActivities = sessionActivities.replaceFirst("CHA:", "extraido");
+            String cha = this.activitiesReader.extractData(this.activities, "CHA:", "Data início:");
             //Data de início
-            initialPos = sessionActivities.indexOf("Data início:");
-            endPos = sessionActivities.indexOf("Data término:");
-               
-            String startDate = sessionActivities.substring(initialPos + 12, endPos -1);
-            sessionActivities = sessionActivities.replaceFirst("Data início:", "extraido");
-            
+            String startDate = this.activitiesReader.extractData(this.activities, "Data início:", "Data término:");
             //Data de término
-            initialPos = sessionActivities.indexOf("Data término:");
-            endPos = sessionActivities.indexOf("Tipo Orientação:");
-
-            String endDate = sessionActivities.substring(initialPos + 13, endPos - 1);
-            sessionActivities = sessionActivities.replaceFirst("Data término:", "extraido");
-            sessionActivities = sessionActivities.replaceFirst("Tipo Orientação:", "extraido");
-            
+            String endDate = this.activitiesReader.extractData(this.activities, "Data término:", "Tipo Orientação:");
+            //Removendo a atividade 1 da lista de atividades sem formatação
+            this.activities = this.activitiesReader.deleteData(this.activities, "Título do trabalho:");
+            this.activities = this.activitiesReader.deleteData(this.activities, "Tabela:");
+            this.activities = this.activitiesReader.deleteData(this.activities, "CHA:");
+            this.activities = this.activitiesReader.deleteData(this.activities, "Data início:");
+            this.activities = this.activitiesReader.deleteData(this.activities, "Data término:");
+            this.activities = this.activitiesReader.deleteData(this.activities, "Tipo Orientação:");
+            //Adicionando a atividade na lista de atividades com formatação
             Activity activity = new Activity(description, cha, startDate, endDate);
-            
             activities.add(activity);
         }
         
