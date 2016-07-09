@@ -6,8 +6,6 @@
 package activities;
 
 import data.ActivitiesReader;
-import development.*;
-import java.util.ArrayList;
 
 /**
  *
