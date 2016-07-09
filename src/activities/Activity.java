@@ -19,17 +19,7 @@ public class Activity {
     private Date startDate; 
     private Date endDate;
     private Float activityHours;
-    
-   /*
-    public Activity(String description, String startDate, String endDate){
-        this.description = description;
-        this.startDate = startDate;
-        this.endDate = endDate;
-        
-        
-    }
-    */
-    
+
     public Activity(String description, String activityHours, String startDate, String endDate) throws ParseException{
         this.description = description;
         
@@ -61,7 +51,7 @@ public class Activity {
      * @return Retorna uma string contendo os atributos de uma atividade
      */
     public String toString() {  
-	return "descricao atividade: " + description + " CHA: " + activityHours.toString() + " data de inicio: " + startDate + " data de termino: " + endDate;  
+	return "Descricao da Atividade:\t" + description + "\tCHA:\t" + activityHours.toString() + "\tData de Início:\t" + startDate + "\tData de Término:" + endDate; 
 } 
     
     /**
