@@ -28,17 +28,17 @@ public class Qualificacao {
             //Descrição
             String description = this.activitiesReader.extractData(this.activities, "Tabela:", "Descrição:");
             //CHA
-            String cha = this.activitiesReader.extractData(this.activities, "CHA:", "Data início:");
+            String cha = this.activitiesReader.extractData(this.activities, "CHA:", "Data de início:");
             //Data de início
-            String startDate = this.activitiesReader.extractData(this.activities, "Data início:", "Data término:");
+            String startDate = this.activitiesReader.extractData(this.activities, "Data de início:", "Data de término:");
             //Data de término
-            String endDate = this.activitiesReader.extractDateField(this.activities, "Data término:");
+            String endDate = this.activitiesReader.extractDateField(this.activities, "Data de término:");
             //Removendo a atividade 1 da lista de atividades sem formatação
             this.activities = this.activitiesReader.deleteData(this.activities, "Tabela:");
             this.activities = this.activitiesReader.deleteData(this.activities, "Descrição:");
             this.activities = this.activitiesReader.deleteData(this.activities, "CHA:");
-            this.activities = this.activitiesReader.deleteData(this.activities, "Data início:");
-            this.activities = this.activitiesReader.deleteData(this.activities, "Data término:");
+            this.activities = this.activitiesReader.deleteData(this.activities, "Data de início:");
+            this.activities = this.activitiesReader.deleteData(this.activities, "Data de término:");
             //Adicionando a atividade na lista de atividades com formatação
             Activity activity = new Activity(description, cha, startDate, endDate);
             activities.add(activity);
