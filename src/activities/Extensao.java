@@ -7,6 +7,7 @@ package activities;
 
 import data.ActivitiesReader;
 import development.*;
+import java.text.ParseException;
 import java.util.ArrayList;
 
 /**
@@ -20,11 +21,10 @@ public class Extensao {
     public Extensao(String radoc){
         this.activities = activitiesReader.extractActivities(radoc, "Atividades de extensão", "Atividades de qualificação");
     }
-    public ArrayList<Activity> extractActivities(String sessionActivities){
+    public ArrayList<Activity> extractActivities(String sessionActivities) throws ParseException{
         ArrayList<Activity> activities = new ArrayList<>();
         
         while(sessionActivities.indexOf("Descrição da atividade:") != -1){
-            Activity activity = new Activity();
             int initialPos;
             int endPos;
             //Descrição
@@ -52,11 +52,8 @@ public class Extensao {
             sessionActivities = sessionActivities.replaceFirst("Data término:", "extraido");
             sessionActivities = sessionActivities.replaceFirst("Descrição da atividade:", "extraido");
             
-            activity.setDescription(description);
-            activity.setActivityHours(cha);
-            activity.setStartDate(startDate);
-            activity.setEndDate(endDate);
-            
+            Activity activity = new Activity(description, cha, startDate, endDate);
+
             activities.add(activity);
         }
         

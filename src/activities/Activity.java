@@ -16,8 +16,8 @@ import java.util.Date;
  */
 public class Activity {
     private String description;
-    private Date dataStart; 
-    private Date dataEnd;
+    private Date startDate; 
+    private Date endDate;
     private Float activityHours;
     
    /*
@@ -30,23 +30,23 @@ public class Activity {
     }
     */
     
-    public Activity(String description, String startDate, String endDate,String activityHours) throws ParseException{
+    public Activity(String description, String activityHours, String startDate, String endDate) throws ParseException{
         this.description = description;
         
         //conversão da string startDate para o tipo date
         SimpleDateFormat formatoS = new SimpleDateFormat("dd/MM/yyyy");
-        dataStart = formatoS.parse(startDate);
+        this.startDate = formatoS.parse(startDate);
         
         //conversão da String endDate para o tipo date
         SimpleDateFormat formatoEnd = new SimpleDateFormat("dd/MM/yyyy");
-        dataEnd = formatoEnd.parse(endDate);
+        this.endDate = formatoEnd.parse(endDate);
         
         //conversão da String activityHours para Float
         Float horasAtividades = Float.valueOf(activityHours);
         
         if(horasAtividades == 1){
         //Calcula e atribui o numero de horas da atividade
-        this.activityHours = calcActivityHours(dataStart,dataEnd);
+        this.activityHours = calcActivityHours(this.startDate,this.endDate);
         
         }else{
                 
@@ -56,16 +56,12 @@ public class Activity {
         
     }
 
-    public Activity() {
-        
-    }
-     
     /**
      * Retora uma string dos atributos
      * @return Retorna uma string contendo os atributos de uma atividade
      */
     public String toString() {  
-	return "descricao atividade: " + description + " CHA: " + activityHours.toString() + " data de inicio: " + dataStart + " data de termino: " + dataEnd;  
+	return "descricao atividade: " + description + " CHA: " + activityHours.toString() + " data de inicio: " + startDate + " data de termino: " + endDate;  
 } 
     
     /**
@@ -114,11 +110,11 @@ public class Activity {
 
 
     public Date getStartDate() {
-        return dataStart;
+        return startDate;
     }
 
 
     public Date getEndDate() {
-        return dataEnd;
+        return endDate;
     }
 }
