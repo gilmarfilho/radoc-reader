@@ -21,7 +21,7 @@ public class Qualificacao {
         this.activities = activitiesReader.extractActivities(radoc, "Atividades de qualificação", "Atividades acadêmicas especiais");
     }
     
-    public ArrayList<Activity> extractActivities2() throws ParseException{
+    public ArrayList<Activity> extractActivities() throws ParseException{
         ArrayList<Activity> activities = new ArrayList<>();
         
         while(this.activities.contains("Tabela:")){

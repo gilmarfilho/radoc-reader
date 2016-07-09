@@ -9,6 +9,7 @@ import activities.Activity;
 import activities.*;
 import data.PDFManager;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.text.ParseException;
 import java.util.ArrayList;
 
@@ -41,7 +42,9 @@ public class ExtrairAtividades {
         //activities.addAll(qualificacao.extractActivities());
         
         for (Activity activity :activities) {
-            System.out.println(activity.toString());;
+            PrintWriter out = new PrintWriter("atividades.txt");
+            out.println(activity.toString());
+            System.out.println(activity.toString());
         }
         
     }  
