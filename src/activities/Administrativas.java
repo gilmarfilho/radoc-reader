@@ -23,7 +23,7 @@ public class Administrativas {
     public ArrayList<Activity> extractActivities() throws ParseException{
         ArrayList<Activity> activities = new ArrayList<>();
         
-        while(this.activities.indexOf("Descrição:") != -1){
+        while(this.activities.contains("Descrição:")){
             //Descrição
             String description = this.activitiesReader.extractData(this.activities, "Descrição:", "Órgão emissor");
             //CHA

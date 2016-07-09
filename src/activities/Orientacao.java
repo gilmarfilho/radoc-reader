@@ -24,7 +24,7 @@ public class Orientacao {
     public ArrayList<Activity> extractActivities() throws ParseException{
         ArrayList<Activity> activities = new ArrayList<>();
         
-        while(this.activities.indexOf("Título do trabalho:") != -1){
+        while(this.activities.contains("Título do trabalho:")){
             //Descrição
             String description = this.activitiesReader.extractData(this.activities, "Título do trabalho:", "Tabela:");
             //CHA

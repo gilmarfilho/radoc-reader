@@ -25,7 +25,7 @@ public class Especiais {
         public ArrayList<Activity> extractActivities() throws ParseException{
         ArrayList<Activity> activities = new ArrayList<>();
         
-        while(this.activities.indexOf("Tabela:") != -1){
+        while(this.activities.contains("Tabela:")){
             //Descrição
             String description = this.activitiesReader.extractData(this.activities, "Tabela:", "CHA");
             //CHA
