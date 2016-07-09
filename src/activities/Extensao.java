@@ -40,7 +40,6 @@ public class Extensao {
             this.activities = this.activitiesReader.deleteData(this.activities, "CHA:");
             this.activities = this.activitiesReader.deleteData(this.activities, "Data início:");
             this.activities = this.activitiesReader.deleteData(this.activities, "Data término:");
-            this.activities = this.activitiesReader.deleteData(this.activities, "Descrição da atividade:");
             //Adicionando a atividade na lista de atividades com formatação
             Activity activity = new Activity(description, cha, startDate, endDate);
             activities.add(activity);
