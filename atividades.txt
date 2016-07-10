@@ -1,0 +1,50 @@
+1	Descricao da Atividade:	 Membro do Núcleo Docente Estruturante do curso de Engenharia de Software	CHA:	40.0	Data de Início:	Sat Jan 01 00:00:00 BRST 2011	Data de Término:Sat Dec 31 00:00:00 BRST 2011
+
+2	Descricao da Atividade:	 Comissão de Avaliação Docente do INF	CHA:	150.0	Data de Início:	Sat Jan 01 00:00:00 BRST 2011	Data de Término:Sat Dec 31 00:00:00 BRST 2011
+
+3	Descricao da Atividade:	 Reuniões do CD do INF	CHA:	30.0	Data de Início:	Sat Jan 01 00:00:00 BRST 2011	Data de Término:Sat Dec 31 00:00:00 BRST 2011
+
+4	Descricao da Atividade:	 MEMBRO DE BANCA DE DEFESA DE DISSERTAÇÃO DE MESTRADO - NA INSTITUIÇÃO 	CHA:	12.0	Data de Início:	Tue Feb 01 00:00:00 BRST 2011	Data de Término:Thu Feb 10 00:00:00 BRST 2011
+
+5	Descricao da Atividade:	 MEMBRO DE BANCA DE DEFESA DE DISSERTAÇÃO DE MESTRADO - NA INSTITUIÇÃO 	CHA:	12.0	Data de Início:	Wed Jun 01 00:00:00 BRT 2011	Data de Término:Wed Jun 15 00:00:00 BRT 2011
+
+6	Descricao da Atividade:	 MEMBRO DE BANCA DE DEFESA DE DISSERTAÇÃO DE MESTRADO - EM OUTRA INSTITUIÇÃO 	CHA:	12.0	Data de Início:	Tue Nov 01 00:00:00 BRST 2011	Data de Término:Tue Nov 22 00:00:00 BRST 2011
+
+7	Descricao da Atividade:	 MEMBRO DE BANCA DE DEFESA DE DISSERTAÇÃO DE MESTRADO - EM OUTRA INSTITUIÇÃO 	CHA:	12.0	Data de Início:	Mon Aug 01 00:00:00 BRT 2011	Data de Término:Fri Aug 26 00:00:00 BRT 2011
+
+8	Descricao da Atividade:	 MEMBRO DE BANCA DE DEFESA DE MONOGRAFIA, PROJETO FINAL DE CURSO E OUTROS TIPOS DE BANCAS 	CHA:	4.0	Data de Início:	Mon Dec 19 00:00:00 BRST 2011	Data de Término:Mon Dec 19 00:00:00 BRST 2011
+
+9	Descricao da Atividade:	 MEMBRO DE BANCA DE DEFESA DE MONOGRAFIA, PROJETO FINAL DE CURSO E OUTROS TIPOS DE BANCAS     	CHA:	4.0	Data de Início:	Mon Dec 19 00:00:00 BRST 2011	Data de Término:Mon Dec 19 00:00:00 BRST 2011
+
+10	Descricao da Atividade:	 MEMBRO DE BANCA DE DEFESA DE MONOGRAFIA, PROJETO FINAL DE CURSO E OUTROS TIPOS DE BANCAS 	CHA:	4.0	Data de Início:	Mon Dec 19 00:00:00 BRST 2011	Data de Término:Mon Dec 19 00:00:00 BRST 2011
+
+11	Descricao da Atividade:	 MEMBRO DE BANCA DE DEFESA DE MONOGRAFIA, PROJETO FINAL DE CURSO E OUTROS TIPOS DE BANCAS 	CHA:	4.0	Data de Início:	Mon Dec 19 00:00:00 BRST 2011	Data de Término:Mon Dec 19 00:00:00 BRST 2011
+
+12	Descricao da Atividade:	 MEMBRO DE CORPO DE JÚRI - CONCURSOS NACIONAIS 	CHA:	12.0	Data de Início:	Mon Jun 06 00:00:00 BRT 2011	Data de Término:Mon Oct 10 00:00:00 BRT 2011
+
+13	Descricao da Atividade:	 MEMBRO DE CORPO DE JÚRI - CONCURSOS NACIONAIS 	CHA:	12.0	Data de Início:	Tue Jul 19 00:00:00 BRT 2011	Data de Término:Sat Jul 23 00:00:00 BRT 2011
+
+14	Descricao da Atividade:	 Espaço das Profissões 2011	CHA:	5.0	Data de Início:	Thu Apr 28 00:00:00 BRT 2011	Data de Término:Fri Apr 29 00:00:00 BRT 2011
+
+15	Descricao da Atividade:	 Mesa-Redonda na XI JGES sobre Métodos Ágeis e Qualidade de Software	CHA:	2.0	Data de Início:	Fri Oct 07 00:00:00 BRT 2011	Data de Término:Fri Oct 07 00:00:00 BRT 2011
+
+16	Descricao da Atividade:	 XI Jornada Goiana em Engenharia de Software (JGES)	CHA:	16.0	Data de Início:	Fri Oct 07 00:00:00 BRT 2011	Data de Término:Sat Oct 08 00:00:00 BRT 2011
+
+17	Descricao da Atividade:	 Sinfonia: Uma abordagem Colaborativa e Flexível para Modelagem e Execução de Processos de Negócio	CHA:	20.0	Data de Início:	Mon Aug 11 00:00:00 BRT 2008	Data de Término:Thu Feb 10 00:00:00 BRST 2011
+
+18	Descricao da Atividade:	 Uma Abordagem Baseada em Modelos para Construção Automática de Interfaces de Usuário para Sistemas de Informação.	CHA:	48.0	Data de Início:	Tue Mar 03 00:00:00 BRT 2009	Data de Término:Wed Jun 15 00:00:00 BRT 2011
+
+19	Descricao da Atividade:	 TRABALHO SEM TÍTULO	CHA:	96.0	Data de Início:	Wed Mar 03 00:00:00 BRT 2010	Data de Término:Fri Dec 30 00:00:00 BRST 2011
+
+20	Descricao da Atividade:	 TRABALHO SEM TÍTULO	CHA:	20.0	Data de Início:	Tue Mar 03 00:00:00 BRT 2009	Data de Término:Thu Mar 03 00:00:00 BRT 2011
+
+21	Descricao da Atividade:	 UM ESTUDO SOBRE GOVERNANÇA DE TI: ASPECTOS DE CONTROLE FINANCEIRO	CHA:	1264.0	Data de Início:	Fri Jul 01 00:00:00 BRT 2011	Data de Término:Sat Dec 31 00:00:00 BRST 2011
+
+22	Descricao da Atividade:	 USO DE ESTEREÓTIPOS NA CONSTRUÇÃO DE INTERFACES DE USUÁRIO: O ESTEREÓTIPO QUESTIONÁRIO	CHA:	2504.0	Data de Início:	Tue Feb 01 00:00:00 BRST 2011	Data de Término:Mon Dec 19 00:00:00 BRST 2011
+
+23	Descricao da Atividade:	 UM ESTUDO SOBRE GOVERNANÇA DE TI: ASPECTOS DE DESEMPENHO E MUDANÇAS	CHA:	2504.0	Data de Início:	Tue Feb 01 00:00:00 BRST 2011	Data de Término:Mon Dec 19 00:00:00 BRST 2011
+
+24	Descricao da Atividade:	 PARTICIPAÇÃO EM CONGRESSOS, SEMINÁRIOS, ENCONTROS, JORNADAS ETC. 	CHA:	12.0	Data de Início:	Fri Oct 07 00:00:00 BRT 2011	Data de Término:Sat Oct 08 00:00:00 BRT 2011
+
+25	Descricao da Atividade:	 PARTICIPAÇÃO EM CONGRESSOS, SEMINÁRIOS, ENCONTROS, JORNADAS ETC.     	CHA:	20.0	Data de Início:	Mon Oct 24 00:00:00 BRST 2011	Data de Término:Wed Oct 26 00:00:00 BRST 2011
+

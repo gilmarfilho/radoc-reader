@@ -8,7 +8,9 @@ package development;
 import activities.Activity;
 import activities.*;
 import data.PDFManager;
+import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.ObjectOutputStream;
 import java.io.PrintWriter;
 import java.text.ParseException;
 import java.util.ArrayList;
@@ -32,7 +34,8 @@ public class ExtrairAtividades {
         Orientacao orientacao = new Orientacao(radoc);
         Projeto projeto = new Projeto(radoc);
         Qualificacao qualificacao = new Qualificacao(radoc);
-        PrintWriter out = new PrintWriter("atividades.txt");
+        PrintWriter writer = new PrintWriter("atividades.txt");
+        int contador = 1;
         
         activities.addAll(administrativas.extractActivities());
         activities.addAll(ensino.extractActivities());
@@ -43,9 +46,11 @@ public class ExtrairAtividades {
         activities.addAll(qualificacao.extractActivities());
         
         for (Activity activity :activities) {
-            out.println(activity.toString());
-            System.out.println(activity.toString());
+            writer.println(contador + "\t" + activity.toString() + "\n");
+            System.out.println(contador + "\t" + activity.toString());
+            contador++;
         }
-        out.println(activities);
+        
+        writer.close();
     }  
 }
