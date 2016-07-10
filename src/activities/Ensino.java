@@ -6,6 +6,9 @@
 package activities;
 
 import data.ActivitiesReader;
+import java.text.ParseException;
+import java.util.ArrayList;
+import java.util.Collection;
 
 /**
  *
@@ -17,5 +20,10 @@ public class Ensino {
     
     public Ensino(String radoc){
         this.activities = activitiesReader.extractActivities(radoc, "Atividades de ensino", "Atividades de orientação");
+    }
+
+    public ArrayList<Activity> extractActivities() throws ParseException{
+        ArrayList<Activity> activities = new ArrayList<>();
+        return activities;
     }
 }

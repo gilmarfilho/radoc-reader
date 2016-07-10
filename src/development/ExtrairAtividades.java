@@ -32,20 +32,20 @@ public class ExtrairAtividades {
         Orientacao orientacao = new Orientacao(radoc);
         Projeto projeto = new Projeto(radoc);
         Qualificacao qualificacao = new Qualificacao(radoc);
+        PrintWriter out = new PrintWriter("atividades.txt");
         
         activities.addAll(administrativas.extractActivities());
-        //activities.addAll(ensino.extractActivities());
+        activities.addAll(ensino.extractActivities());
         activities.addAll(especiais.extractActivities());
-        //activities.addAll(extensao.extractActivities());
+        activities.addAll(extensao.extractActivities());
         activities.addAll(orientacao.extractActivities());
-        //activities.addAll(projeto.extractActivities());
-        //activities.addAll(qualificacao.extractActivities());
+        activities.addAll(projeto.extractActivities());
+        activities.addAll(qualificacao.extractActivities());
         
         for (Activity activity :activities) {
-            PrintWriter out = new PrintWriter("atividades.txt");
             out.println(activity.toString());
             System.out.println(activity.toString());
         }
-        
+        out.println(activities);
     }  
 }
