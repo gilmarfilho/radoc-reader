@@ -26,6 +26,11 @@ public class PDFManager {
     private String filePath;
     private File file;
     
+    /**
+     * 
+     * @return String do conteudo do pdf
+     * @throws IOException 
+     */
     public String ToText() throws IOException{
         this.pdfStripper = null;
         this.pdDoc = null;
@@ -45,7 +50,11 @@ public class PDFManager {
         Text = pdfStripper.getText(pdDoc);
         return Text;
     }
-
+    
+    /**
+     * 
+     * @param filePath caminho para o pdf
+     */
     public void setFilePath(String filePath) {
         this.filePath = filePath;
     }

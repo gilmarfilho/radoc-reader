@@ -1,7 +1,5 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * Classe responsavel por extrair as atividades dp radoc
  */
 package data;
 
@@ -18,7 +16,13 @@ public class ActivitiesReader {
         
         return activities;
     }
-    
+    /**
+     * Extrai um bloco de texto entre duas tags
+     * @param activities String contendo todas as atividades
+     * @param tag1 Padrão de inicio
+     * @param tag2 Padrão de termino
+     * @return Bloco de texto entre tag1 e tag2
+     */
     public String extractData(String activities, String tag1, String tag2){
         int initialPos = activities.indexOf(tag1);
         int endPos = activities.indexOf(tag2);
@@ -27,6 +31,12 @@ public class ActivitiesReader {
         return data;
     }
     
+    /**
+     * Extrai uma data de uma string
+     * @param activities String contendo a atividade
+     * @param tag Padrão de inicio
+     * @return String contendo uma data
+     */
     public String extractDateField(String activities, String tag){
         int initialPos = activities.indexOf(tag) + tag.length();
         int endPos = initialPos + 11;
@@ -35,11 +45,22 @@ public class ActivitiesReader {
         return date;
     }
     
+    /**
+     * Remove um campo de uma string
+     * @param activities String da atividade
+     * @param tag padrão a ser removido
+     * @return String da atividade sem o parão
+     */
     public String deleteData(String activities, String tag){
         activities = activities.replaceFirst(tag, "extraido");
         return activities;
     }
 
+    /**
+     * Remove o header e o footer do pdf e quebras de linha
+     * @param sessionActivities String da atividade
+     * @return String da atividade Sem footer, header e quebra de linha
+     */
     private String removeFooterHeaderReturn(String sessionActivities){
         
         while(sessionActivities.contains("\r\n")){
